@@ -1,0 +1,87 @@
+body {
+    background-color: #0a192f;
+    color: #ccd6f6;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #112240;
+    text-align: center;
+    padding: 1em;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #64ffda;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ccd6f6;
+}
+/*hover*/
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ccd6f6;
+  text-shadow: 0 0 8px #8a2be2, 0 0 12px #8a2be2, 0 0 18px #8a2be2;
+  transition: all 0.3s ease;
+}
+
+
+.services {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.service {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    background-color: #112240;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #64ffda;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  animation: fadeIn 0.6s ease-in-out;
+}
+.intro a {
+  color: #64ffda; /* that soft neon aqua/light blue */
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.intro a:hover {
+  color: #8a2be2; /* purple glow shade when hovered */
+  text-shadow: 0 0 8px #8a2be2, 0 0 12px #8a2be2;
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
