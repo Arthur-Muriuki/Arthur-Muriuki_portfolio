@@ -14,6 +14,13 @@ function revealOnScroll() {
     }
   });
 }
+function toggleMenu() {
+  const nav = document.querySelector(".nav-links");
+  const burger = document.querySelector(".hamburger");
+
+  nav.classList.toggle("active");
+  burger.classList.toggle("active");
+}
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll(); // run once on load

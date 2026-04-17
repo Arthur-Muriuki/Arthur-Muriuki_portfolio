@@ -15,7 +15,14 @@
 <!-- Navigation -->
 <header class="nav">
     <h2 class="logo">Arthur</h2>
-    <nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -38,7 +45,7 @@
 
         <div class="buttons">
             <a href="#projects"><button>View Work</button></a>
-            <a href="#contact"><button class="ghost">Contact</button></a>
+            <a href="#contact"><button>Contact</button></a>
         </div>
     </div>
 
@@ -58,9 +65,9 @@
     </p>
 
     <div class="stats">
-        <div class="stat">💻 Full Stack Dev</div>
-        <div class="stat">📱 Android Engineer</div>
-        <div class="stat">🤖 AI Builder</div>
+        <div class="stat"> Full Stack Dev</div>
+        <div class="stat"> Android Engineer</div>
+        <div class="stat"> AI Builder</div>
     </div>
 </section>
 
@@ -114,7 +121,7 @@
     </div>
 </section>
 
-<!-- CONTACT (MERGED + CLEANED) -->
+<!-- CONTACT -->
 <section id="contact" class="section contact reveal">
     <h2>Let’s Connect</h2>
     <p>Got an idea, project, or opportunity? Send me a message.</p>

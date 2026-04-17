@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
+/* =======================
+   GLOBAL RESET
+======================= */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +16,9 @@ body {
   scroll-behavior: smooth;
 }
 
-/* GLOW BACKGROUND */
+/* =======================
+   BACKGROUND GLOW
+======================= */
 .bg-glow {
   position: fixed;
   width: 600px;
@@ -26,11 +31,14 @@ body {
   z-index: -1;
 }
 
-/* NAV */
+/* =======================
+   NAVBAR
+======================= */
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 25px 60px;
+  align-items: center;
+  padding: 20px 60px;
   position: fixed;
   width: 100%;
   backdrop-filter: blur(12px);
@@ -41,14 +49,20 @@ body {
   color: #64ffda;
 }
 
-.nav a {
+/* Nav links */
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
   margin-left: 30px;
   text-decoration: none;
   color: #ccd6f6;
   position: relative;
 }
 
-.nav a::after {
+/* Underline animation */
+.nav-links a::after {
   content: "";
   position: absolute;
   width: 0%;
@@ -59,17 +73,51 @@ body {
   transition: 0.3s;
 }
 
-.nav a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
-/* SECTIONS */
+/* =======================
+   HAMBURGER MENU
+======================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #64ffda;
+  transition: 0.3s;
+}
+
+/* Animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =======================
+   SECTIONS
+======================= */
 .section {
   min-height: 100vh;
   padding: 120px 80px;
 }
 
-/* HERO */
+/* =======================
+   HERO
+======================= */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -87,7 +135,6 @@ body {
 .typing {
   color: #8a2be2;
   margin-top: 10px;
-  font-weight: 500;
 }
 
 .subtext {
@@ -96,7 +143,13 @@ body {
   opacity: 0.8;
 }
 
-/* BUTTONS */
+/* =======================
+   BUTTONS
+======================= */
+.buttons {
+  display: flex;
+}
+
 .buttons button {
   margin-top: 20px;
   margin-right: 10px;
@@ -118,7 +171,9 @@ body {
   color: #64ffda;
 }
 
-/* IMAGE CARD */
+/* =======================
+   IMAGE CARD
+======================= */
 .image-card {
   background: rgba(255,255,255,0.05);
   padding: 20px;
@@ -137,7 +192,9 @@ body {
   border-radius: 15px;
 }
 
-/* ABOUT */
+/* =======================
+   ABOUT
+======================= */
 .about {
   text-align: center;
 }
@@ -160,7 +217,9 @@ body {
   transform: translateY(-5px);
 }
 
-/* CARDS */
+/* =======================
+   CARDS
+======================= */
 .cards {
   display: flex;
   gap: 20px;
@@ -186,7 +245,9 @@ body {
   border-radius: 10px;
 }
 
-/* PROJECT LINKS */
+/* =======================
+   PROJECT LINKS
+======================= */
 .projects .card a {
   display: inline-block;
   margin-top: 10px;
@@ -198,82 +259,13 @@ body {
   color: #8a2be2;
 }
 
-/* POPUP BACKDROP */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 25, 47, 0.6);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.4s;
-  z-index: 100;
-}
-
-/* ACTIVE STATE */
-.popup.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* POPUP BOX */
-.popup-content {
-  background: rgba(255,255,255,0.05);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 40px rgba(138,43,226,0.3);
-  transform: scale(0.8);
-  transition: 0.4s;
-}
-
-.popup.show .popup-content {
-  transform: scale(1);
-}
-
-.popup-content h3 {
-  color: #64ffda;
-  margin-bottom: 10px;
-}
-
-.popup-content button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  background: #64ffda;
-  cursor: pointer;
-}
-
-/* CONTACT */
+/* =======================
+   CONTACT
+======================= */
 .contact {
   text-align: center;
 }
 
-.socials a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #64ffda;
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  color: #8a2be2;
-}
-/* contact form */
-/* CONTACT SECTION */
-.contact {
-  text-align: center;
-}
-
-/* FORM CONTAINER */
 .contact-form {
   max-width: 600px;
   margin: 40px auto;
@@ -282,52 +274,77 @@ body {
   gap: 20px;
 }
 
-/* INPUT ROW (name + email side by side) */
 .input-row {
   display: flex;
   gap: 15px;
 }
 
-/* INPUTS + TEXTAREA */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 15px;
   border-radius: 12px;
   border: none;
-  outline: none;
   background: rgba(255,255,255,0.05);
   color: #fff;
-  font-family: inherit;
-  transition: 0.3s;
 }
 
-/* FOCUS EFFECT (this gives life) */
 .contact-form input:focus,
 .contact-form textarea:focus {
   border: 1px solid #64ffda;
   box-shadow: 0 0 10px rgba(100,255,218,0.3);
 }
 
-/* BUTTON */
 .contact-form button {
   align-self: center;
-  width: fit-content;
   padding: 12px 30px;
   border-radius: 30px;
   border: none;
   background: #64ffda;
   color: #0a192f;
-  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.contact-form button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(100,255,218,0.2);
+.socials a {
+  margin: 0 15px;
+  color: #64ffda;
+  text-decoration: none;
 }
-/* SCROLL ANIMATION */
+
+/* =======================
+   POPUP
+======================= */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10,25,47,0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup-content {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* =======================
+   SCROLL ANIMATION
+======================= */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -339,15 +356,63 @@ body {
   transform: translateY(0);
 }
 
+/* =======================
+   FOOTER
+======================= */
 footer {
   text-align: center;
   padding: 20px;
 }
-/* MOBILE RESPONSIVENESS */
+
+/* =======================
+   MOBILE RESPONSIVE
+======================= */
 @media (max-width: 768px) {
+
+  .nav {
+    padding: 20px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #112240;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
   .hero {
     flex-direction: column;
     text-align: center;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons button {
+    width: 200px;
   }
 
   .cards {
@@ -356,5 +421,13 @@ footer {
 
   .input-row {
     flex-direction: column;
+  }
+
+  .section {
+    padding: 100px 20px;
+  }
+
+  .image-card img {
+    width: 200px;
   }
 }
