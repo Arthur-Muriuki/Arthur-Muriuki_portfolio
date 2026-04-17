@@ -21,6 +21,30 @@ function toggleMenu() {
   nav.classList.toggle("active");
   burger.classList.toggle("active");
 }
+// =======================
+// AUTO-CLOSE MOBILE MENU
+// =======================
+const navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    const nav = document.querySelector(".nav-links");
+    const burger = document.querySelector(".hamburger");
+
+    // Close menu
+    nav.classList.remove("active");
+    burger.classList.remove("active");
+  });
+});
+document.addEventListener("click", (e) => {
+  const nav = document.querySelector(".nav-links");
+  const burger = document.querySelector(".hamburger");
+
+  if (!nav.contains(e.target) && !burger.contains(e.target)) {
+    nav.classList.remove("active");
+    burger.classList.remove("active");
+  }
+});
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll(); // run once on load
