@@ -89,7 +89,6 @@ if (typingElement) {
     const textArray = [
         "Full-Stack Developer",
         "Android Engineer",
-        "AI Builder"
     ];
 
     let i = 0;
