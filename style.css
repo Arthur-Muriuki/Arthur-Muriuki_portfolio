@@ -273,6 +273,56 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+/* =======================
+   WHATSAPP CONTACT
+======================= */
+
+.quick-contact{
+margin-top:35px;
+}
+
+.whatsapp-btn{
+
+display:inline-flex;
+align-items:center;
+gap:12px;
+
+padding:14px 25px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:#fff;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+transition:.4s;
+}
+
+.whatsapp-btn svg{
+color:#25D366;
+}
+
+.whatsapp-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 20px rgba(37,211,102,.2),
+0 0 40px rgba(37,211,102,.3);
+
+background:rgba(37,211,102,.08);
+
+}
+
+.socials{
+margin-top:35px;
+}
 
 .input-row {
   display: flex;
