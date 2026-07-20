@@ -88,7 +88,6 @@ if (typingElement) {
 
     const textArray = [
         "Software Engineer",
-        "Project Coordinator",
         "Full-Stack Developer",
         "Android Engineer",  
     ];
