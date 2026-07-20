@@ -87,6 +87,7 @@ const typingElement = document.querySelector(".typing");
 if (typingElement) {
 
     const textArray = [
+        "Software Engineer",
         "Full-Stack Developer",
         "Android Engineer",
     ];
