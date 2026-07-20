@@ -90,6 +90,7 @@ if (typingElement) {
         "Software Engineer",
         "Full-Stack Developer",
         "Android Engineer",
+        "Project Coordinator"
     ];
 
     let i = 0;
