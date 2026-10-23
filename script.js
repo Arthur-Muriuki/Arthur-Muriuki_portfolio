@@ -108,48 +108,51 @@
         });
     }
 
-    // 6. Contact Form AJAX Submission (FormSubmit)
-    const contactForm = document.querySelector("#contact-form");
+// 6. Contact Form AJAX Submission (FormSubmit)
+const contactForm = document.querySelector("#contact-form");
 
-    if (contactForm) {
-        contactForm.addEventListener("submit", async (event) => {
-            event.preventDefault();
+if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-            const submitBtn = contactForm.querySelector(".form-submit");
-            const originalBtnText = submitBtn ? submitBtn.innerHTML : "";
+        const submitBtn = contactForm.querySelector(".form-submit");
+        const originalBtnText = submitBtn ? submitBtn.innerHTML : "";
 
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `Sending... <span aria-hidden="true">⏳</span>`;
+        }
+
+        try {
+            const formData = new FormData(contactForm);
+            // Convert FormData to a JSON object
+            const dataObject = Object.fromEntries(formData);
+
+            // Notice the /ajax/ in the URL endpoint
+            const response = await fetch("https://formsubmit.co/ajax/arthurmuriuki06@gmail.com", {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(dataObject)
+            });
+
+            if (response.ok) {
+                contactForm.reset();
+                if (popup) popup.hidden = false;
+            } else {
+                const data = await response.json();
+                alert(data.message || "There was an issue sending your message. Please try again.");
+            }
+        } catch (error) {
+            alert("Submission error. Please make sure your FormSubmit account is activated or check your connection.");
+        } finally {
             if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = `Sending... <span aria-hidden="true">⏳</span>`;
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
             }
-
-            try {
-                const formData = new FormData(contactForm);
-                const response = await fetch(contactForm.action, {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "Accept": "application/json"
-                    }
-                });
-
-                if (response.ok) {
-                    contactForm.reset();
-                    if (popup) {
-                        popup.hidden = false;
-                    }
-                } else {
-                    const data = await response.json();
-                    alert(data.message || "There was an issue sending your message. Please try again.");
-                }
-            } catch (error) {
-                alert("Network error. Please check your internet connection and try again.");
-            } finally {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnText;
-                }
-            }
-        });
-    }
+        }
+    });
+}
 })();
