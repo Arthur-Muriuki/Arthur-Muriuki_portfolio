@@ -134,7 +134,7 @@
 
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = `Sending... <span aria-hidden="true">⏳</span>`;
+                submitBtn.innerHTML = `Sending... <span aria-hidden="true"></span>`;
             }
 
             try {
