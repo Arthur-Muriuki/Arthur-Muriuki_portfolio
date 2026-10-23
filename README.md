@@ -53,7 +53,7 @@ Check out the live website: [arthurmuriuki-portfolio.netlify.app](https://arthur
         ├── apple-touch-icon.png
         ├── arthur-muriuki-software-developer.webp
         └── og-image.jpg
-
+```
 ## Connect with Me
 
 - **Portfolio:** [arthurmuriuki-portfolio.netlify.app](https://arthurmuriuki-portfolio.netlify.app/)
